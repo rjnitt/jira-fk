@@ -238,6 +238,64 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Sprint",
+			"item": [
+				{
+					"name": "CREATE SPRINT",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \n       \n    \"name\": \"sprint-2\"\n    }"
+						},
+						"url": {
+							"raw": "{{JIRA_URL}}/sprint/create",
+							"host": [
+								"{{JIRA_URL}}"
+							],
+							"path": [
+								"sprint",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET SPRINT DETAIL",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{JIRA_URL}}/task/get-detail?taskId=1",
+							"host": [
+								"{{JIRA_URL}}"
+							],
+							"path": [
+								"task",
+								"get-detail"
+							],
+							"query": [
+								{
+									"key": "taskId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }

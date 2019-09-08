@@ -56,4 +56,24 @@ public class Util {
 		}
 	}
 
+	public static <T> void noRecordFound(T tt, String error) {
+		if (tt == null) {
+			throw new IllegalArgumentException(error);
+		}
+	}
+
+	public static <T> T noRecordFoundWithReturn(T tt) {
+		if (tt == null) {
+			throw new IllegalArgumentException("No record(s) found ");
+		}
+		return tt;
+	}
+
+	public static <T> T noRecordFoundWithReturn(T tt, String error) {
+		if (tt == null) {
+			throw new IllegalArgumentException(error);
+		}
+		return tt;
+	}
+
 }

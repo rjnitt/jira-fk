@@ -5,6 +5,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import com.rjnitt.boilerplate.dto.SprintDto;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -23,11 +25,20 @@ public class Sprint {
 	private Long id;
 
 	private String name;
-	
+
 	private Long createdAt;
-	
+
 	private Long createdBy;
-	
+
 	private Boolean isActive;
+
+	public static Sprint tranformForCreate(SprintDto task, Long ct, Long userId) {
+		Sprint s = new Sprint();
+		s.setIsActive(true);
+		s.setCreatedAt(ct);
+		s.setCreatedBy(userId);
+		s.setName(task.getName());
+		return s;
+	}
 
 }
